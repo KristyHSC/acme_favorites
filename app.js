@@ -8,6 +8,12 @@ router.get('/users', (req, res, next) => {
         .catch(next)
 })
 
+router.get('/favorites', (req, res, next) => {
+    Favorite.findAll()
+        .then(favorites => res.json(favorites))
+        .catch(next)
+})
+
 router.get('/things', (req, res, next) => {
     Thing.findAll()
         .then(things => res.json(things))

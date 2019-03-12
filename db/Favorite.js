@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 const conn = require('./conn')
 
 const Favorite = conn.define('favorite', {
-    Ranked: Sequelize.INTEGER
+    rank: Sequelize.INTEGER
 })
 
 module.exports = Favorite;
