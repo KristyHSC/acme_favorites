@@ -5,9 +5,13 @@ const User = require('./User')
 
 
 Favorite.belongsTo(User)
+//User.hasMany(Favorite)
+
+User.belongsToMany(Thing, {through: Favorite})
+Thing.belongsToMany(User, {through: Favorite})
 
 Favorite.belongsTo(Thing)
-Thing.hasMany(Favorite, {foreignKey: 'thingId'})
+// Thing.hasMany(Favorite, {foreignKey: 'thingId'})
 
 module.exports = {
     conn,

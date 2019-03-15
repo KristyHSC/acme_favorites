@@ -3,19 +3,25 @@ const {User, Thing, Favorite} = require('./db')
 
 
 router.get('/users', (req, res, next) => {
-    User.findAll()
+    User.findAll({
+        include: Thing,
+        order: [['name', 'ASC']] })
         .then(users => res.json(users))
         .catch(next)
 })
 
 router.get('/favorites', (req, res, next) => {
-    Favorite.findAll()
+    Favorite.findAll({
+        order:[['rank', 'ASC']]
+    })
         .then(favorites => res.json(favorites))
         .catch(next)
 })
 
 router.get('/things', (req, res, next) => {
-    Thing.findAll()
+    Thing.findAll({
+        order: [['name', 'ASC']]
+    })
         .then(things => res.json(things))
         .catch(next)
 })

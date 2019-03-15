@@ -43,7 +43,7 @@ export default class Users extends Component {
                                     .includes(thing.id))
                                     .map(thing => (
                                         <div key={thing.id}>
-                                            <li>{thing.name}(Ranked: {this.state.favorites.filter(favorite => (favorite.thingId === thing.id))[0].rank})</li>
+                                            <li>{thing.name} (Ranked: {this.state.favorites.filter(favorite => (favorite.thingId === thing.id))[0].rank})</li>
                                         </div>
                                     ))
                             }</ul>

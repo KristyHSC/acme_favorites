@@ -42,7 +42,7 @@ export default class Things extends Component {
                                             <li>favorite by: {user.name}</li>
                                         </div>
                                     ))
-                            }</ul>
+                            } </ul>
                         </div>
                     ))
                 }
